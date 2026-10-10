@@ -2,7 +2,7 @@
 
 Receiver for a 940 nm free-space optical link carrying **Q65 and CW** on audio-frequency LED modulation. The receiver catches the light with a large surplus lens, converts it to a voltage with a photodiode transimpedance amplifier (TIA), and drives a TDA2050 audio amplifier module. The output feeds a speaker, or a sound card running WSJT-X.
 
-This is the **receive side**. The transmit side is the ESP8266-based Q65/CW optical beacon, documented in [rusk2ua/ve2ug-optical-beacon-project](https://github.com/rusk2ua/ve2ug-optical-beacon-project), which is K2UA's revised copy of Rene Barbeau VE2UG's design.
+This is the **receive side**. The transmit side may be 1/the ESP8266-based Q65/CW optical beacon, documented in [rusk2ua/ve2ug-optical-beacon-project](https://github.com/rusk2ua/ve2ug-optical-beacon-project), which is K2UA's revised copy of Rene Barbeau VE2UG's design, or 2/a 940-nm LED or array of LEDs modulated by typically a pulse-width modulator that's keyed on and off by a Morse code key.
 
 **Release:** 2026.10.10 · **Author:** Rus Healy, K2UA · **License:** MIT
 
