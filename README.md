@@ -1,4 +1,4 @@
-# optical-receive-chain
+# Optical Receive Chain for 940 nm Communications
 
 Receiver for a 940 nm free-space optical link carrying **Q65 and CW** on audio-frequency LED modulation. The receiver catches the light with a large surplus lens, converts it to a voltage with a photodiode transimpedance amplifier (TIA), and drives a TDA2050 audio amplifier module. The output feeds a speaker, or a sound card running WSJT-X or a CW decoder.
 
