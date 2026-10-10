@@ -58,7 +58,7 @@ Most sound cards roll off a little near 20 kHz. Run the playback and recording l
 
 ## 6. Optical test, short range
 
-1. Set the beacon running tones, or its normal Q65 or CW, at a few meters, indoors, in the dark.
+1. Set the beacon running tones, or its normal Q65 or CW, at a few meters, indoors, in the dark. For a PWM keyed-LED transmitter, hold the key down for a steady carrier.
 2. Focus the lens. Peak the signal by ear, or watch the spectrum in WSJT-X.
 3. Record a test sweep if the beacon firmware can send tones at 1.5 kHz and 15 kHz. Compare them with `analyze_tones.py -f 1500,15000`. This checks the whole optical and electrical chain, including the LED driver's own frequency response.
 

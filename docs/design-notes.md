@@ -2,6 +2,15 @@
 
 The reasoning behind the front-end values: what was chosen, why, and what was ruled out along the way.
 
+## Transmit sources
+
+The receiver is built for two kinds of transmitter:
+
+1. **The Q65/CW optical beacon** (ESP8266, documented in [rusk2ua/ve2ug-optical-beacon-project](https://github.com/rusk2ua/ve2ug-optical-beacon-project)), which modulates the LED with audio tones.
+2. **A hand-keyed 940 nm LED or LED array**, typically driven by a pulse-width modulator (PWM) and keyed on and off with a Morse key.
+
+The receiver hears the **PWM frequency as the CW tone**. Set it somewhere in the 500 Hz to 15 kHz passband. A 600 to 1000 Hz note is easiest on the ears. A square-wave drive also puts energy into odd harmonics (3×, 5×…), so a low PWM frequency gives a buzzier note than a near-sine beacon tone. Use the volume pot or an audio filter if that's fatiguing. A PWM frequency above about 15 kHz rolls off in the TIA, and above about 20 kHz you won't hear it at all.
+
 ## Why a transimpedance amplifier
 
 A photodiode is a current source: its photocurrent is proportional to the light that hits it. There are two ways to turn that current into a voltage.
@@ -77,7 +86,7 @@ These are output noise densities from `tia_calc.py` for the LM358 build, in nV/�
 | Shot noise (1 nA DC) | 18 | 18 |
 | **Total** | **242** | **273** |
 
-Integrated from 300 Hz to 20 kHz, that's about **37 pA RMS input-referred**. A Q65 or CW decoder works in a far narrower bandwidth than 20 kHz, so the usable sensitivity is much better than that broadband figure. The OPA350's current noise is roughly 50 times lower, which takes that term out and leaves Rf's own thermal noise in charge. That gives about **18 pA RMS** over the same band.
+Integrated from 300 Hz to 20 kHz, that's about **37 pA RMS input-referred**. WSJT-X's Q65 decoder, and your ear copying CW, both work in a far narrower bandwidth than 20 kHz, so the usable sensitivity is much better than that broadband figure. The OPA350's current noise is roughly 50 times lower, which takes that term out and leaves Rf's own thermal noise in charge. That gives about **18 pA RMS** over the same band.
 
 The current-noise numbers are ballpark values, since the LM358 datasheet barely specifies them. Treat the table as relative, and measure the real build with `analyze_tones.py`.
 

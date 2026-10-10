@@ -40,4 +40,5 @@ Tie **pin 7 to pin 6** and **pin 5 to Vref**. A floating op-amp section can osci
 ## Output
 
 - The TDA2050 module drives a speaker or headphones directly. During setup, use an **8 Ω dummy load** or keep the volume low, since a 1 MΩ front end with nothing connected is loud.
-- For WSJT-X or a CW decoder, feed the sound card through a **divider**, such as 4.7 kΩ in series and 470 Ω to ground (about −21 dB), from the module output. If the module is a bridged (BTL) design, neither speaker lead is ground, so use a small isolation transformer or take the signal ahead of the amp instead.
+- Hand-keyed CW is usually copied by ear, from the speaker or headphones.
+- To decode Q65 in WSJT-X, or to record the audio for `analyze_tones.py`, feed the sound card through a **divider**, such as 4.7 kΩ in series and 470 Ω to ground (about −21 dB), from the module output. If the module is a bridged (BTL) design, neither speaker lead is ground, so use a small isolation transformer or take the signal ahead of the amp instead.
