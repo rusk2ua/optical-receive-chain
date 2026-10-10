@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="520" viewBox="0 0 720 520">
+  <title>Photodiode front end: PD49PI with LM358 transimpedance amplifier, flat to 15 kHz</title>
+  <desc>Regulated +5 V front-end rail. 10k/10k divider sets Vref 2.5 V on LM358 pin 3, bypassed by 10 uF. Photodiode cathode to +5 V through 1 k with 10 uF bypass (2.5 V reverse bias); anode to pin 2. Feedback Rf 1 Mohm parallel Cf 3.3 pF. Output pin 1 has a 10 k pull-down and goes through 100 ohm to the TDA2050 module input.</desc>
+  <style>
+    .t  { font: 13px Arial, Helvetica, sans-serif; fill: #222; }
+    .ts { font: 12px Arial, Helvetica, sans-serif; fill: #444; }
+    .th { font: bold 14px Arial, Helvetica, sans-serif; fill: #222; }
+    .tt { font: bold 16px Arial, Helvetica, sans-serif; fill: #222; }
+    .w  { stroke: #222; stroke-width: 1.5; fill: none; stroke-linejoin: round; }
+    .sig{ stroke: #1D9E75; stroke-width: 2.4; fill: none; }
+    .ir { stroke: #E08A00; stroke-width: 1.6; fill: none; }
+    .dot{ fill: #222; } .sdot { fill: #1D9E75; }
+  </style>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1 L9 5 L1 9 Z" fill="context-stroke"/>
+    </marker>
+  </defs>
+  <rect width="720" height="520" fill="#ffffff"/>
+  <text class="tt" x="20" y="28">Front end: PD49PI + LM358 TIA (stopgap until OPA350/OPA2350)</text>
+
+  <!-- +5 V FE rail -->
+  <text class="t" x="20" y="58">+5 V FE <tspan class="ts">(from 78L05 stage)</tspan></text>
+  <polyline class="w" points="80,70 465,70"/>
+  <line class="w" x1="20" y1="70" x2="80" y2="70"/>
+  <circle class="dot" cx="125" cy="70" r="3"/>
+  <circle class="dot" cx="235" cy="70" r="3"/>
+
+  <!-- Vref divider -->
+  <polyline class="w" points="125,70 125,215"/>
+  <rect class="w" x="118" y="215" width="14" height="40"/>
+  <polyline class="w" points="125,255 125,320"/>
+  <circle class="dot" cx="125" cy="290" r="3"/>
+  <rect class="w" x="118" y="320" width="14" height="40"/>
+  <polyline class="w" points="125,360 125,420"/>
+  <text class="t" x="80" y="240">10 k</text>
+  <text class="t" x="80" y="345">10 k</text>
+  <text class="ts" x="132" y="306">Vref 2.5 V</text>
+
+  <polyline class="w" points="125,290 390,290"/>
+  <circle class="dot" cx="320" cy="290" r="3"/>
+  <polyline class="w" points="320,290 320,337"/>
+  <line class="w" x1="308" y1="337" x2="332" y2="337"/>
+  <line class="w" x1="308" y1="344" x2="332" y2="344"/>
+  <polyline class="w" points="320,344 320,420"/>
+  <text class="t" x="338" y="345">10 µF</text>
+  <text class="ts" x="301" y="334">+</text>
+
+  <!-- Photodiode bias -->
+  <polyline class="w" points="235,70 235,100"/>
+  <rect class="w" x="228" y="100" width="14" height="28"/>
+  <text class="t" x="196" y="119">1 k</text>
+  <polyline class="w" points="235,128 235,165"/>
+  <circle class="dot" cx="235" cy="140" r="3"/>
+  <polyline class="w" points="235,140 285,140 285,148"/>
+  <line class="w" x1="273" y1="148" x2="297" y2="148"/>
+  <line class="w" x1="273" y1="155" x2="297" y2="155"/>
+  <polyline class="w" points="285,155 285,164"/>
+  <line class="w" x1="273" y1="164" x2="297" y2="164"/>
+  <line class="w" x1="277" y1="169" x2="293" y2="169"/>
+  <line class="w" x1="281" y1="174" x2="289" y2="174"/>
+  <text class="t" x="303" y="157">10 µF</text>
+  <text class="ts" x="264" y="146">+</text>
+
+  <!-- Photodiode (cathode up, anode down) -->
+  <line class="w" x1="222" y1="165" x2="248" y2="165"/>
+  <polygon class="w" points="222,191 248,191 235,165"/>
+  <text class="th" x="150" y="210">PD49PI</text>
+  <text class="ts" x="245" y="230">cathode up, anode to pin 2</text>
+  <text class="ts" x="245" y="245">2.5 V reverse bias</text>
+  <text class="ts" x="140" y="148">940 nm</text>
+  <line class="ir" x1="165" y1="155" x2="214" y2="168" marker-end="url(#ah)"/>
+  <line class="ir" x1="165" y1="175" x2="214" y2="188" marker-end="url(#ah)"/>
+
+  <!-- Inverting node -->
+  <polyline class="sig" points="235,191 235,210 390,210"/>
+  <circle class="sdot" cx="350" cy="210" r="3.2"/>
+  <polyline class="w" points="350,210 350,110"/>
+  <circle class="dot" cx="350" cy="150" r="3"/>
+  <polyline class="w" points="350,110 370,110"/>
+  <rect class="w" x="370" y="103" width="44" height="14"/>
+  <text class="t" x="392" y="96" text-anchor="middle">Rf 1 MΩ</text>
+  <polyline class="w" points="414,110 430,110 430,150"/>
+  <polyline class="w" points="350,150 386,150"/>
+  <line class="w" x1="386" y1="139" x2="386" y2="161"/>
+  <line class="w" x1="394" y1="139" x2="394" y2="161"/>
+  <polyline class="w" points="394,150 430,150"/>
+  <text class="t" x="390" y="172" text-anchor="middle">Cf 3.3 pF</text>
+  <circle class="dot" cx="430" cy="130" r="3"/>
+  <path class="w" d="M430,130 H457 A8,8 0 0 1 473,130 H560 V250"/>
+
+  <!-- LM358 -->
+  <polygon class="w" points="390,180 390,320 520,250"/>
+  <text class="th" x="440" y="255" text-anchor="middle">LM358</text>
+  <text class="ts" x="440" y="270" text-anchor="middle">(½)</text>
+  <text class="t" x="397" y="215">−</text>
+  <text class="t" x="397" y="295">+</text>
+  <text class="ts" x="374" y="204">2</text>
+  <text class="ts" x="374" y="284">3</text>
+  <text class="ts" x="526" y="243">1</text>
+  <polyline class="w" points="465,215 465,70"/>
+  <text class="ts" x="472" y="118">8 V+</text>
+  <polyline class="w" points="465,285 465,420"/>
+  <text class="ts" x="472" y="380">4 GND</text>
+
+  <!-- Output -->
+  <polyline class="sig" points="520,250 590,250"/>
+  <circle class="dot" cx="545" cy="250" r="3"/>
+  <circle class="sdot" cx="560" cy="250" r="3.2"/>
+  <polyline class="w" points="545,250 545,300"/>
+  <rect class="w" x="538" y="300" width="14" height="40"/>
+  <polyline class="w" points="545,340 545,420"/>
+  <text class="t" x="557" y="318">10 k</text>
+  <text class="ts" x="557" y="333">pull-down</text>
+  <rect class="w" x="590" y="243" width="40" height="14"/>
+  <text class="t" x="610" y="236" text-anchor="middle">100 Ω</text>
+  <line class="sig" x1="630" y1="250" x2="700" y2="250" marker-end="url(#ah)"/>
+  <text class="t" x="700" y="276" text-anchor="end">to module</text>
+  <text class="t" x="700" y="291" text-anchor="end">input (pot)</text>
+
+  <!-- Ground rail -->
+  <polyline class="w" points="125,420 545,420"/>
+  <polyline class="w" points="340,420 340,430"/>
+  <line class="w" x1="326" y1="430" x2="354" y2="430"/>
+  <line class="w" x1="331" y1="436" x2="349" y2="436"/>
+  <line class="w" x1="336" y1="442" x2="344" y2="442"/>
+  <text class="ts" x="340" y="460" text-anchor="middle">GND (cable shield → module input ground)</text>
+
+  <!-- Notes -->
+  <text class="ts" x="20" y="488">Not drawn: 100 nF ceramic pin 8 → pin 4 at the chip.  Unused half: pin 7 → pin 6, pin 5 → Vref.  Cf is NP0/C0G ceramic.</text>
+  <text class="ts" x="20" y="505">Keep the pin-2 node tiny: photodiode anode, Rf and Cf soldered right at pin 2, no ground pour around it.</text>
+</svg>

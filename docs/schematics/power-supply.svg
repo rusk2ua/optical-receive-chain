@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380">
+  <title>Power: 13 V LFP battery to TDA2050 module and filtered 5 V front-end rail</title>
+  <desc>Battery positive through a 3 A fuse and power switch feeds the TDA2050 module directly. A branch goes through a 1N5819 diode, 100 ohm and 100 uF pre-filter into a 78L05 regulator with 0.33 uF input and 0.1 uF output capacitors, then a 47 ohm and 100 uF plus 100 nF post-filter to the +5 V front-end rail.</desc>
+  <style>
+    .t  { font: 13px Arial, Helvetica, sans-serif; fill: #222; }
+    .ts { font: 12px Arial, Helvetica, sans-serif; fill: #444; }
+    .th { font: bold 14px Arial, Helvetica, sans-serif; fill: #222; }
+    .tt { font: bold 16px Arial, Helvetica, sans-serif; fill: #222; }
+    .w  { stroke: #222; stroke-width: 1.5; fill: none; stroke-linejoin: round; }
+    .p  { stroke: #C0392B; stroke-width: 2.2; fill: none; }
+    .dot{ fill: #222; }
+  </style>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1 L9 5 L1 9 Z" fill="context-stroke"/>
+    </marker>
+  </defs>
+  <rect width="900" height="380" fill="#ffffff"/>
+  <text class="tt" x="20" y="28">Power: 13 V LFP battery → TDA2050 module + quiet 5 V front-end rail</text>
+
+  <!-- Battery -->
+  <polyline class="w" points="60,120 60,170"/>
+  <line class="w" x1="42" y1="170" x2="78" y2="170"/>
+  <line class="w" x1="50" y1="178" x2="70" y2="178"/>
+  <line class="w" x1="42" y1="186" x2="78" y2="186"/>
+  <line class="w" x1="50" y1="194" x2="70" y2="194"/>
+  <polyline class="w" points="60,194 60,290"/>
+  <text class="ts" x="84" y="172">+</text>
+  <text class="th" x="74" y="225">13 V LFP</text>
+  <text class="ts" x="74" y="241">10 Ah+</text>
+  <text class="ts" x="74" y="256">(10–14.6 V)</text>
+
+  <!-- Fuse -->
+  <polyline class="p" points="60,120 100,120"/>
+  <rect class="w" x="100" y="112" width="40" height="16"/>
+  <line class="w" x1="100" y1="120" x2="140" y2="120"/>
+  <text class="t" x="120" y="104" text-anchor="middle">F1 3 A</text>
+  <text class="ts" x="120" y="146" text-anchor="middle">at battery</text>
+
+  <!-- Switch -->
+  <polyline class="p" points="140,120 175,120"/>
+  <circle class="dot" cx="178" cy="120" r="3"/>
+  <line class="w" x1="180" y1="119" x2="212" y2="104"/>
+  <circle class="dot" cx="215" cy="120" r="3"/>
+  <text class="t" x="196" y="94" text-anchor="middle">S1</text>
+  <polyline class="p" points="218,120 300,120"/>
+  <circle class="dot" cx="260" cy="120" r="3"/>
+  <line class="p" x1="260" y1="120" x2="260" y2="62" marker-end="url(#ah)"/>
+  <text class="th" x="268" y="62">to TDA2050 module V+</text>
+  <text class="ts" x="268" y="78">(module's own power terminals)</text>
+
+  <!-- D1 -->
+  <polygon class="w" points="300,108 300,132 322,120"/>
+  <line class="w" x1="322" y1="108" x2="322" y2="132"/>
+  <text class="t" x="311" y="152" text-anchor="middle">D1 1N5819</text>
+  <text class="ts" x="311" y="167" text-anchor="middle">reverse-polarity</text>
+  <polyline class="w" points="322,120 350,120"/>
+
+  <!-- R1 -->
+  <rect class="w" x="350" y="113" width="40" height="14"/>
+  <text class="t" x="370" y="104" text-anchor="middle">R1 100 Ω</text>
+  <polyline class="w" points="390,120 520,120"/>
+
+  <!-- C1 100uF -->
+  <circle class="dot" cx="420" cy="120" r="3"/>
+  <polyline class="w" points="420,120 420,196"/>
+  <line class="w" x1="408" y1="196" x2="432" y2="196"/>
+  <line class="w" x1="408" y1="203" x2="432" y2="203"/>
+  <polyline class="w" points="420,203 420,290"/>
+  <text class="ts" x="400" y="194">+</text>
+  <text class="t" x="410" y="230" text-anchor="end">C1</text>
+  <text class="ts" x="410" y="245" text-anchor="end">100 µF 25 V</text>
+
+  <!-- C2 0.33uF -->
+  <circle class="dot" cx="490" cy="120" r="3"/>
+  <polyline class="w" points="490,120 490,196"/>
+  <line class="w" x1="478" y1="196" x2="502" y2="196"/>
+  <line class="w" x1="478" y1="203" x2="502" y2="203"/>
+  <polyline class="w" points="490,203 490,290"/>
+  <text class="t" x="497" y="230">C2</text>
+  <text class="ts" x="497" y="245">0.33 µF</text>
+
+  <!-- U1 78L05 -->
+  <rect class="w" x="520" y="95" width="90" height="60"/>
+  <text class="th" x="565" y="135" text-anchor="middle">U1 78L05</text>
+  <text class="ts" x="526" y="113">IN</text>
+  <text class="ts" x="604" y="113" text-anchor="end">OUT</text>
+  <text class="ts" x="565" y="150" text-anchor="middle">GND</text>
+  <polyline class="w" points="565,155 565,290"/>
+  <polyline class="w" points="610,120 700,120"/>
+
+  <!-- C3 0.1uF -->
+  <circle class="dot" cx="640" cy="120" r="3"/>
+  <polyline class="w" points="640,120 640,196"/>
+  <line class="w" x1="628" y1="196" x2="652" y2="196"/>
+  <line class="w" x1="628" y1="203" x2="652" y2="203"/>
+  <polyline class="w" points="640,203 640,290"/>
+  <text class="t" x="647" y="230">C3</text>
+  <text class="ts" x="647" y="245">0.1 µF</text>
+
+  <!-- R2 -->
+  <rect class="w" x="670" y="113" width="40" height="14"/>
+  <text class="t" x="690" y="104" text-anchor="middle">R2 47 Ω</text>
+  <polyline class="w" points="710,120 830,120"/>
+
+  <!-- C4 100uF -->
+  <circle class="dot" cx="740" cy="120" r="3"/>
+  <polyline class="w" points="740,120 740,196"/>
+  <line class="w" x1="728" y1="196" x2="752" y2="196"/>
+  <line class="w" x1="728" y1="203" x2="752" y2="203"/>
+  <polyline class="w" points="740,203 740,290"/>
+  <text class="ts" x="720" y="194">+</text>
+  <text class="t" x="747" y="230">C4</text>
+  <text class="ts" x="747" y="245">100 µF</text>
+
+  <!-- C5 100nF -->
+  <circle class="dot" cx="800" cy="120" r="3"/>
+  <polyline class="w" points="800,120 800,196"/>
+  <line class="w" x1="788" y1="196" x2="812" y2="196"/>
+  <line class="w" x1="788" y1="203" x2="812" y2="203"/>
+  <polyline class="w" points="800,203 800,290"/>
+  <text class="t" x="807" y="230">C5</text>
+  <text class="ts" x="807" y="245">100 nF</text>
+
+  <line class="w" x1="830" y1="120" x2="880" y2="120" marker-end="url(#ah)"/>
+  <text class="th" x="880" y="104" text-anchor="end">+5 V FE</text>
+  <text class="ts" x="880" y="146" text-anchor="end">≈4.9 V</text>
+
+  <!-- Ground -->
+  <polyline class="w" points="60,290 800,290"/>
+  <polyline class="w" points="430,290 430,300"/>
+  <line class="w" x1="416" y1="300" x2="444" y2="300"/>
+  <line class="w" x1="421" y1="306" x2="439" y2="306"/>
+  <line class="w" x1="426" y1="312" x2="434" y2="312"/>
+
+  <text class="ts" x="20" y="340">Front-end parts (D1 onward) live on the front-end board at the lens; 13 V and ground arrive over the shielded cable.</text>
+  <text class="ts" x="20" y="358">Battery negative ties to ground only at the module's power input (star point). Draw ≈ 6 mA total; R1 drops ≈ 0.6 V.</text>
+</svg>

@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470">
+  <title>Receive chain system wiring and grounding</title>
+  <desc>Light from the transmitter passes through a 5.5 inch rear-projection TV lens and IR-pass filter onto the PD49PI on the front-end board, which holds the 5 V regulator and the transimpedance amplifier in a grounded metal box. A shielded two-conductor cable carries +13 V and signal, with the shield as ground, to the TDA2050 module. The 13 V LFP battery feeds the module through a fuse and switch, with the star ground at the module power input. The module output drives a speaker or headphones and a line-level divider to a sound card running WSJT-X or a CW decoder.</desc>
+  <style>
+    .t  { font: 13px Arial, Helvetica, sans-serif; fill: #222; }
+    .ts { font: 12px Arial, Helvetica, sans-serif; fill: #444; }
+    .th { font: bold 14px Arial, Helvetica, sans-serif; fill: #222; }
+    .tt { font: bold 16px Arial, Helvetica, sans-serif; fill: #222; }
+    .box{ stroke: #222; stroke-width: 1.5; fill: #F6F6F4; }
+    .sh { stroke: #555; stroke-width: 1.5; fill: none; stroke-dasharray: 6 4; }
+    .w  { stroke: #222; stroke-width: 1.5; fill: none; }
+    .sig{ stroke: #1D9E75; stroke-width: 2.4; fill: none; }
+    .p  { stroke: #C0392B; stroke-width: 2.4; fill: none; }
+    .ir { stroke: #E08A00; stroke-width: 1.6; fill: none; }
+  </style>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1 L9 5 L1 9 Z" fill="context-stroke"/>
+    </marker>
+  </defs>
+  <rect width="900" height="470" fill="#ffffff"/>
+  <text class="tt" x="20" y="28">System wiring and grounding</text>
+
+  <!-- Incoming light -->
+  <text class="ts" x="20" y="50">940 nm Q65 / CW</text>
+  <text class="ts" x="20" y="64">from the beacon</text>
+  <line class="ir" x1="20" y1="105" x2="92" y2="105" marker-end="url(#ah)"/>
+  <line class="ir" x1="20" y1="135" x2="92" y2="135" marker-end="url(#ah)"/>
+  <line class="ir" x1="20" y1="165" x2="92" y2="165" marker-end="url(#ah)"/>
+
+  <!-- Lens -->
+  <ellipse class="box" cx="110" cy="135" rx="16" ry="62"/>
+  <text class="th" x="110" y="222" text-anchor="middle">Lens</text>
+  <text class="ts" x="110" y="238" text-anchor="middle">5.5 in rear-</text>
+  <text class="ts" x="110" y="252" text-anchor="middle">projection TV</text>
+  <line class="ir" x1="128" y1="100" x2="196" y2="132"/>
+  <line class="ir" x1="128" y1="170" x2="196" y2="138"/>
+  <line class="ir" x1="128" y1="135" x2="196" y2="135"/>
+
+  <!-- Front-end shielded box -->
+  <rect class="sh" x="180" y="55" width="260" height="190" rx="6"/>
+  <text class="ts" x="190" y="72">Grounded metal box at lens focus</text>
+  <rect class="box" x="196" y="88" width="20" height="94" rx="2"/>
+  <text class="ts" x="206" y="198" text-anchor="middle">IR-pass</text>
+  <text class="ts" x="206" y="212" text-anchor="middle">filter</text>
+  <rect class="box" x="226" y="110" width="70" height="50" rx="4"/>
+  <text class="th" x="261" y="132" text-anchor="middle">PD49PI</text>
+  <text class="ts" x="261" y="148" text-anchor="middle">2.5 V bias</text>
+  <rect class="box" x="312" y="88" width="112" height="56" rx="4"/>
+  <text class="th" x="368" y="111" text-anchor="middle">LM358 TIA</text>
+  <text class="ts" x="368" y="128" text-anchor="middle">1 MΩ / 3.3 pF</text>
+  <rect class="box" x="312" y="160" width="112" height="56" rx="4"/>
+  <text class="th" x="368" y="184" text-anchor="middle">78L05 + filter</text>
+  <text class="ts" x="368" y="201" text-anchor="middle">+5 V FE rail</text>
+  <line class="sig" x1="296" y1="128" x2="312" y2="122"/>
+  <line class="p" x1="368" y1="160" x2="368" y2="144"/>
+
+  <!-- Cable -->
+  <line class="sig" x1="424" y1="116" x2="600" y2="116"/>
+  <line class="p" x1="424" y1="188" x2="470" y2="188"/>
+  <polyline class="p" points="470,188 470,150 600,150"/>
+  <rect class="sh" x="450" y="98" width="130" height="70" rx="20"/>
+  <text class="th" x="515" y="88" text-anchor="middle">Shielded cable</text>
+  <text class="ts" x="515" y="222" text-anchor="middle">2 conductors: signal, +13 V</text>
+  <text class="ts" x="515" y="237" text-anchor="middle">shield = ground</text>
+
+  <!-- Module -->
+  <rect class="box" x="600" y="80" width="170" height="170" rx="6"/>
+  <text class="th" x="685" y="105" text-anchor="middle">TDA2050 module</text>
+  <text class="ts" x="608" y="121">IN (50 k pot)</text>
+  <text class="ts" x="608" y="146">V+ (13 V)</text>
+  <text class="ts" x="608" y="200">GND (star point)</text>
+  <text class="ts" x="685" y="235" text-anchor="middle">22 k / 2.2 µF unchanged</text>
+  <circle cx="610" cy="215" r="5" fill="#222"/>
+  <polyline class="w" points="580,133 590,133 590,215 605,215"/>
+  <text class="ts" x="580" y="266" text-anchor="end">shield lands at the</text>
+  <text class="ts" x="580" y="280" text-anchor="end">module end only</text>
+
+  <!-- Battery -->
+  <rect class="box" x="600" y="320" width="170" height="60" rx="6"/>
+  <text class="th" x="685" y="345" text-anchor="middle">13 V LFP battery</text>
+  <text class="ts" x="685" y="363" text-anchor="middle">10 Ah or larger</text>
+  <polyline class="p" points="740,320 740,290"/>
+  <rect class="w" x="732" y="268" width="16" height="22"/>
+  <text class="ts" x="754" y="284">F1 3 A + S1</text>
+  <polyline class="p" points="740,268 740,258 640,258 640,250"/>
+  <polyline class="w" points="630,320 630,300 610,300 610,220"/>
+  <text class="ts" x="598" y="340" text-anchor="end">battery − to</text>
+  <text class="ts" x="598" y="354" text-anchor="end">star point only</text>
+
+  <!-- Outputs -->
+  <line class="w" x1="770" y1="130" x2="860" y2="130" marker-end="url(#ah)"/>
+  <text class="th" x="780" y="120">Speaker</text>
+  <line class="w" x1="770" y1="190" x2="860" y2="190" marker-end="url(#ah)"/>
+  <text class="th" x="780" y="180">Line out</text>
+  <text class="ts" x="780" y="208">divider → sound</text>
+  <text class="ts" x="780" y="222">card → WSJT-X</text>
+
+  <!-- Legend -->
+  <line class="sig" x1="20" y1="420" x2="50" y2="420"/>
+  <text class="ts" x="56" y="424">signal</text>
+  <line class="p" x1="110" y1="420" x2="140" y2="420"/>
+  <text class="ts" x="146" y="424">+13 V / +5 V power</text>
+  <line class="w" x1="270" y1="420" x2="300" y2="420"/>
+  <text class="ts" x="306" y="424">ground</text>
+  <line class="sh" x1="360" y1="420" x2="390" y2="420"/>
+  <text class="ts" x="396" y="424">shield / enclosure</text>
+  <text class="ts" x="20" y="452">Ground the front-end box only through the cable shield. A second ground path (box to tripod to battery, etc.) makes a hum loop.</text>
+</svg>
